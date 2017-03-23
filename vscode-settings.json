@@ -1,0 +1,13 @@
+{
+    "window.zoomLevel": 1,
+    "editor.fontFamily": "Monaco",
+    "editor.fontSize": 16,
+    "editor.tabCompletion": true,
+    "http.proxy": "45.32.43.168:4399",
+    "http.proxyStrictSSL": false,
+    "editor.wrappingColumn": -1,
+    "git.confirmSync": false,
+    "git.path": "/usr/bin",
+    "workbench.colorTheme": "Monokai",
+    "workbench.iconTheme": "vscode-icons"
+}
