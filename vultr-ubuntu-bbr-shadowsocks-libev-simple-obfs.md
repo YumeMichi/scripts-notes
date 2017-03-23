@@ -1,5 +1,7 @@
 # vultr ubuntu bbr shadowsocks-libev simple-obfs
+
 Server provider: Vultr
+
 Server OS: Ubuntu 16.10 x64
 
 ## Update
@@ -135,3 +137,43 @@ Console will output some log like this.
 Download the latest shadowsocks-android apk from [shadowsocks-android/releases](https://github.com/shadowsocks/shadowsocks-android/releases) and simple-obfs-android apk from [simple-obfs-android/releases](https://github.com/shadowsocks/simple-obfs-android/releases) and then install them.
 
 Open shadowsocks-android, setting your server info and enable the obfs plugin in Plugin, finally don't forget configure the obfs plugin.
+
+## http proxy
+Install polipo via package manager such as pacman.
+```
+sudo pacman -Sy polipo
+```
+
+Create a config file `/etc/polipo/config`.
+```
+proxyAddress = "127.0.0.1"
+socksParentProxy = "127.0.0.1:1080"
+socksProxyType = socks5
+chunkHighMark = 50331648
+objectHighMark = 16384
+serverMaxSlots = 64
+serverSlots = 16
+serverSlots1 = 32
+```
+
+Restart polipo service
+```
+sudo systemctl restart polipo
+```
+
+Configure http proxy
+You can use http_proxy variable or proxychains.
+
+>http_proxy
+
+```
+export http_proxy="http://127.0.0.1:8123/"
+curl www.google.com
+```
+
+>proxychains
+
+Remove socks4 line from `/etc/proxychains.conf` and add `http 127.0.0.1 8123`
+```
+proxychains curl www.google.com
+```
