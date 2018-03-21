@@ -58,13 +58,6 @@ vendor/lib/libchromatix_s5k3m2_preview.so
 vendor/lib/libchromatix_s5k3m2_snapshot.so
 vendor/lib/libchromatix_s5k3m2_zsl.so"
 
-SULTAN_FWS=" \
-vendor/firmware/a330_pfp.fw
-vendor/firmware/a330_pm4.fw
-vendor/firmware/cpp_firmware_v1_1_1.fw
-vendor/firmware/cpp_firmware_v1_1_6.fw
-vendor/firmware/cpp_firmware_v1_2_0.fw"
-
 # OOS3 camera HAL blobs
 OOS3_LIBS="\
 vendor/lib/libFNVfbEngineLib.so
@@ -141,24 +134,15 @@ vendor/lib/libchromatix_s5k3m2_snapshot_panorama.so
 vendor/lib/libchromatix_s5k3m2_video_hd.so
 vendor/lib/libchromatix_s5k3m2_zsl.so"
 
-OOS3_FWS=" \
-vendor/firmware/a330_pfp.fw
-vendor/firmware/a330_pm4.fw
-vendor/firmware/cpp_firmware_v1_1_1.fw
-vendor/firmware/cpp_firmware_v1_1_6.fw
-vendor/firmware/cpp_firmware_v1_2_0.fw"
-
 ROOT_DIR="/home/ikke/Work/proprietary_vendor_oneplus_tmp/"
 OOS3_URL="https://raw.githubusercontent.com/YumeMichi/proprietary_vendor_oneplus/o-mr1/"
 SULTAN_URL="https://raw.githubusercontent.com/YumeMichi/proprietary_vendor_oneplus/lineage-15.1-sultan/"
 
 SULTAN_LIBS=(${SULTAN_LIBS})
-SULTAN_FWS=(${SULTAN_FWS})
-SULTAN_BLOBS=${SULTAN_LIBS[@]}" "${SULTAN_FWS[@]}
+SULTAN_BLOBS=${SULTAN_LIBS[@]}
 
 OOS3_LIBS=(${OOS3_LIBS})
-OOS3_FWS=(${OOS3_FWS})
-OOS3_BLOBS=${OOS3_LIBS[@]}" "${OOS3_FWS[@]}
+OOS3_BLOBS=${OOS3_LIBS[@]}
 
 SyncCameraHAL() {
 	TEMP1=$1
