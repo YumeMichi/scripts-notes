@@ -145,63 +145,63 @@ OOS3_LIBS=(${OOS3_LIBS})
 OOS3_BLOBS=${OOS3_LIBS[@]}
 
 SyncCameraHAL() {
-	TEMP1=$1
-	TEMP2=$2
-	MODE=$3
-	FLAG=1
+    TEMP1=$1
+    TEMP2=$2
+    MODE=$3
+    FLAG=1
 
-	for b in ${TEMP1[@]}
-	do
-		BLOB=${b//\//\\\/}
-		echo -e "Deleting...\t"${b}
+    for b in ${TEMP1[@]}
+    do
+        BLOB=${b//\//\\\/}
+        echo -e "Deleting...\t"${b}
 
-		FILE=${ROOT_DIR}"onyx/proprietary/"${b}
-		if [ -f "$FILE" ]; then
-			rm -rf $FILE
-			sed "/${BLOB}/d" -i ${ROOT_DIR}"onyx/onyx-vendor.mk"
-		else
-			echo "Error: $FILE not found! Cleaning up vendor tree..."
-			cd $ROOT_DIR
-			git reset --hard > /dev/null && git clean -f -d
-			FLAG=0
-			break
-		fi
-	done
+        FILE=${ROOT_DIR}"onyx/proprietary/"${b}
+        if [ -f "$FILE" ]; then
+            rm -rf $FILE
+            sed "/${BLOB}/d" -i ${ROOT_DIR}"onyx/onyx-vendor.mk"
+        else
+            echo "Error: $FILE not found! Cleaning up vendor tree..."
+            cd $ROOT_DIR
+            git reset --hard > /dev/null && git clean -f -d
+            FLAG=0
+            break
+        fi
+    done
 
-	if [[ "$FLAG" == "0" ]]; then
-		exit
-	fi
+    if [[ "$FLAG" == "0" ]]; then
+        exit
+    fi
 
-	for b in ${TEMP2[@]}
-	do
-		BLOB=${b//\//\\\/}
-		echo -e "Processing...\t"${b}
-		if [[ "$MODE" == "1" ]]; then
-			URL=${SULTAN_URL}
-		else
-			URL=${OOS3_URL}
-		fi
-		echo -e "Downloading...\t"${URL}"onyx/proprietary/"${b}
-		FILE=${ROOT_DIR}"onyx/proprietary/"${b}
-		wget -qO $FILE ${URL}"onyx/proprietary/"${b}
-		if [[ ! -f "$FILE" ]]; then
-			echo -e "Error: Download $FILE failed! Cleaning up vendor tree..."
-			cd $ROOT_DIR
-			git reset --hard > /dev/null && git clean -f -d
-			break
-		fi
-		# TODO
-		# Insert new lines into onyx-vendor.mk automatically.
-	done
+    for b in ${TEMP2[@]}
+    do
+        BLOB=${b//\//\\\/}
+        echo -e "Processing...\t"${b}
+        if [[ "$MODE" == "1" ]]; then
+            URL=${SULTAN_URL}
+        else
+            URL=${OOS3_URL}
+        fi
+        echo -e "Downloading...\t"${URL}"onyx/proprietary/"${b}
+        FILE=${ROOT_DIR}"onyx/proprietary/"${b}
+        wget -qO $FILE ${URL}"onyx/proprietary/"${b}
+        if [[ ! -f "$FILE" ]]; then
+            echo -e "Error: Download $FILE failed! Cleaning up vendor tree..."
+            cd $ROOT_DIR
+            git reset --hard > /dev/null && git clean -f -d
+            break
+        fi
+        # TODO
+        # Insert new lines into onyx-vendor.mk automatically.
+    done
 }
 
 # 1: Replace OOS3 camera HAL with Sultan camera HAL
 # 2: Replace Sultan camera HAL with OOS3 camera HAL
 MODE=$1
 if [[ "$MODE" == "1" ]]; then
-	SyncCameraHAL "$OOS3_BLOBS" "$SULTAN_BLOBS" "$MODE"
+    SyncCameraHAL "$OOS3_BLOBS" "$SULTAN_BLOBS" "$MODE"
 elif [[ "$MODE" == "2" ]]; then
-	SyncCameraHAL "$SULTAN_BLOBS" "$OOS3_BLOBS" "$MODE"
+    SyncCameraHAL "$SULTAN_BLOBS" "$OOS3_BLOBS" "$MODE"
 else
-	echo "Invalid parameter!"
+    echo "Invalid parameter!"
 fi
