@@ -1,0 +1,13 @@
+[Unit]
+Description=A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+LimitNOFILE=32768
+ExecStart=/root/frp/frpc -c /root/frp/frpc.ini
+
+[Install]
+WantedBy=multi-user.target

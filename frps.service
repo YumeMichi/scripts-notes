@@ -1,0 +1,13 @@
+[Unit]
+Description=A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.
+After=network.target
+
+[Service]
+Type=simple
+User=frp
+Group=frp
+LimitNOFILE=32768
+ExecStart=/usr/local/bin/frps -c /usr/local/etc/frps.ini
+
+[Install]
+WantedBy=multi-user.target
