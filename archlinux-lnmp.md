@@ -34,7 +34,7 @@ sudo ln -s /usr/local/readline6/lib/libreadline.so.6.3 /usr/lib/libreadline.so.6
 wget -q http://cn2.php.net/distributions/php-5.6.36.tar.gz
 tar xf php-5.6.36.tar.gz
 cd php-5.6.36
-./configure --prefix=/usr/local/php/5.6 --with-mysql --with-mysqli --with-pdo-mysql --with-readline --enable-mbstring --enable-fpm --with-fpm-user=ikke --with-fpm-group=users --with-fpm-systemd --with-pdo-pgsql --with-curl
+./configure --prefix=/usr/local/php/5.6 --with-mysql --with-mysqli --with-pdo-mysql --with-readline --enable-mbstring --enable-fpm --with-fpm-user=ikke --with-fpm-group=users --with-fpm-systemd --with-pdo-pgsql --with-curl --enable-bcmath --with-zlib --enable-zip
 make -j8
 sudo make install
 sudo cp php.ini-production /usr/local/php/5.6/lib/php.ini
