@@ -1,0 +1,74 @@
+Kernel 3.4.113
+
+* arch/arm/mach-ixp4xx/common.c
+cf22e06188c3b41daaa8d614e3ffcef3e78c37a3
+1b55cb73ba899368227bc7308d1dc67ba2e8d8bd
+f8d1ca20c67f8ac80cab9a58f053749b47b4f6da
+4eb766ed8b44beb71440470719bdf38b12f92287
+4b06b45ce4419fd4988447f30de2c93fd5af7963
+2a07957466e22a24e99ab2fca65b8a4d717b5d34
+
+drivers/mmc/card/block.c
+81e17d7bb89be0b8b451bbd5550d2170307205ad
+5f035d4ba4cc3afc0e09c8bba5e20c217ca5088f
+
+fs/dcache.c
+b705a46b97946975b8443be8090add7a094f63ae
+
+fs/debugfs/inode.c
+b27beedf89f3fb868128b38f53c7f81d6b0f861b
+
+fs/exec.c
+e0bcccd256eae1efb25ee6b74e69acaf6f6ad2fa
+
+fs/pipe.c
+856ab745bdfcb5c9dd4d251ae1efcd640f09d9a0
+c4a179a7733036d706855bf68eb8cbe5d5b0abb5
+d2eb7ef138e9ac9a46c32ce7fde97247271600f0
+
+fs/proc/task_mmu.c
+e4c74bb1ebfc176544be2c812a65c39ea1e59ba1
+
+include/linux/sched.h
+f8bf7ccfaa52aa7287146a9e97ba0ed34af725d9
+4f6d5da4c4aa576d65b4d8e7e2d408b20a456c3f
+6b046d7d975757442543b4a03a364287b731a8e6
+3c4d9c70030c82c623de890e31b91c163436e43e
+83b90318b98c46e511730c6f7d7213a6995f9a43
+35bd8b6890a74ee52aaf32a4fc37d3abd98d8b98
+
+
+* init/main.c
+
+kernel/async.c
+b8ac8bab080d14ef7be900e51d8f0d1d1afefdba
+
+kernel/events/core.c
+1e0a47e9256df2db58a296131815a22b1e95612a
+16be6916fe9968640f9a385bff86b5d4e0ae9342
+
+kernel/fork.c
+45e254dca0072020ccd01e6a33a39508b846fa4b
+
+* kernel/printk.c
+
+kernel/sched/rt.c
+a423b412ecac89a3f0656306ca262b57d57ccdec
+39136a63d1f25f9936bd2155de6c81c339790991
+
+* net/ipv6/tcp_ipv6.c
+
+net/netlink/af_netlink.c
+906ffce84cfb1ba0b934049fc0518c6d060d573f
+743cdf451f094beaef51793e2d15da2be8e3be4a
+
+net/unix/af_unix.c
+cdc0b40f793ecba67a6701221820d2a9c15b327f
+c306142d5f4c0ff5e6e84343ec40aaa1a9264c50
+
+security/keys/gc.c
+ca366cf74335bc6ea251b728c92709747aacad7c
+
+* sound/usb/6fire/comm.c
+248a22521fd9c3b570764dde525ef4bd653e586f
+5e0a5237ec556e0ca670b0520fdd6f5ddd0718e1
