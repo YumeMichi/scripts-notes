@@ -1,0 +1,71 @@
+r 6253d3c43cdf zram: remove obsolete sysfs attrs
+r ef189adb5421 Revert "zram: allow zram to allocate CMA pages"
+r 9e68c88d34f8 Revert "zram: use __GFP_MOVABLE for memory allocation"
+r 87deaf2bc6f9 Revert "staging: zram: Rate limit memory allocation errors"
+r 95be2ee06295 Revert "block/mm: make bdev_ops->rw_page() take a bool for read/write"
+r 2eba50aa2a93 Revert "mm/block: convert rw_page users to bio op use"
+r 631ca0c33dbf BACKPORT: zram: remove waitqueue for IO done
+r daaf8099f296 BACKPORT: zram: extend zero pages to same element pages
+r c0a9dec12a37 UPSTREAM: zram: fix operator precedence to get offset
+r c7babb1e856a BACKPORT: zram: handle multiple pages attached bio's bvec
+r 43b2474dd115 UPSTREAM: zram: use __GFP_MOVABLE for memory allocation
+r f788c59ae84e BACKPORT: zram: partial IO refactoring
+r c636490d0e62 UPSTREAM: zram: use zram_slot_lock instead of raw bit_spin_lock op
+r 0440a3ef7b56 UPSTREAM: zram: remove zram_meta structure
+r 1ba13f5ed7bb UPSTREAM: zram: introduce zram data accessor
+r 4d96c0e8f7c0 UPSTREAM: zram: use zram_free_page instead of open-coded
+r 1846ad7e779b UPSTREAM: zram: reduce load operation in page_same_filled
+r d4fd1984018e UPSTREAM: zram: count same page write as page_stored
+r b87265f7956c UPSTREAM: zram: constify attribute_group structures.
+r 7348a16fc5ed UPSTREAM: zram: rework copy of compressor name in comp_algorithm_store()
+r 68fa55e53dbe UPSTREAM: lib: Add xxhash module
+r 7c3d0527853c UPSTREAM: lib: Add zstd modules
+r bdd41d7a49fb UPSTREAM: zram: add zstd to the supported algorithms list
+r fa9e980ac420 UPSTREAM: zram: clean up duplicated codes in __zram_bvec_write
+r 4e77e0212c91 UPSTREAM: zram: inline zram_compress
+r 8a944684f5cb UPSTREAM: zram: rename zram_decompress_page to __zram_bvec_read
+r 3bdaddeaeeae UPSTREAM: zram: add interface to specif backing device
+r 1d6026f3760a BACKPORT: zram: add free space management in backing device
+r d92a96eb341a BACKPORT: zram: identify asynchronous IO's return value
+r c2dc5d5830fd BACKPORT: zram: write incompressible pages to backing device
+r f2727946a746 BACKPORT: zram: read page from backing device
+r d5ca56c3d075 UPSTREAM: zram: add config and doc file for writeback feature
+r fedb0cd250d4 UPSTREAM: zram: fix null dereference of handle
+r a037e4feb975 BACKPORT: zram: set BDI_CAP_STABLE_WRITES once
+r 8ce1a316b649 UPSTREAM: drivers/block/zram/zram_drv.c: make zram_page_end_io() static
+r 00869033fa16 UPSTREAM: zram: Delete gendisk before cleaning up the request queue
+r 986ce9ddf8c4 UPSTREAM: zram: correct flag name of ZRAM_ACCESS
+r 4a6a18b7a87f BACKPORT: zram: mark incompressible page as ZRAM_HUGE
+r aca614891784 BACKPORT: zram: record accessed second
+r 7b7a35f047cd BACKPORT: zram: introduce zram memory tracking
+r 279f10a87a63 UPSTREAM: drivers/block/zram/zram_drv.c: fix bug storing backing_dev
+r 526756082354 BACKPORT: crypto: zstd - Add zstd support
+r 77cfc015dbfa zram_drv.c: make zstd default compression algorithm, use lzo as a fallback
+r d77640d2932b Revert "Revert "mm/block: convert rw_page users to bio op use""
+r 25cfb9041c7e Revert "Revert "block/mm: make bdev_ops->rw_page() take a bool for read/write""
+r 5b713d8d6ce1 zram_drv.c: Use pointer to backing_dev_info from request_queue
+r f72a623c2571 zram: use zstd over lz4 over lzo by default
+r 1930e002c2ee BACKPORT: zsmalloc: introduce zs_huge_class_size()
+r 2a766b48a9ee BACKPORT: zram: drop max_zpage_size and use zs_huge_class_size()
+r 13f3dca06deb ANDROID: zram: set comp_len to PAGE_SIZE when page is huge
+r 86f9806edd3a Revert "BACKPORT: zram: drop max_zpage_size and use zs_huge_class_size()"
+r 9f11286f0a7f zram: update zram to use zpool
+r 858e5b45cf27 zram: revise default allocator config option
+r 70f9cbf37e15 zram: allow zram to allocate CMA pages
+r 76fb2f620353 zram: convert to using memset_l
+r f317e9b8ba41 Revert "zram: update zram to use zpool"
+r 6afd4128ea11 mm: swap: don't delay swap free for fast swap devices
+r 0a8aab227688 staging: zram: Rate limit memory allocation errors
+r 903fdfe486f3 zram: set physical queue limits to avoid array out of bounds accesses
+r c61e84354a41 z3fold: Don't fail on zRAM allocation requests
+r 349c2b26a04a zram: use common zpool interface
+r 8cde6c3c26a9 zpool: add compaction api
+r 848e94ece0ba zsmalloc: Add compaction callbacks
+r ff768e838cc9 zram: Add compile-time support for choosing default allocator
+r 6ee1a164fa1a zram: use octal permissions
+r e721bb946bcf zram: allow LZO to be disabled
+r 69eb38df8a38 zram: allow choosing default compressor via config
+r 43ba571cec28 zram: fix typo in comment
+r a23d04693189 Revert "zram: allow zram to allocate CMA pages"
+r e2dabf9d88aa zram: Fix mem_used_max parameter
+r d3c122fbd871 FROMLIST: zram: fix lockdep warning of free block handling
